@@ -1,6 +1,6 @@
 
 from pymongo import MongoClient
-client = MongoClient("mongodb+srv://test:test@mongocluster.yervs.mongodb.net/MongoDB?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://username:password@mongocluster.yervs.mongodb.net/databasename?retryWrites=true&w=majority")
 db = client.get_database('MongoDB')
 records = db.MongoRecords
 
