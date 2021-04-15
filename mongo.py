@@ -4,60 +4,70 @@ client = MongoClient("mongodb+srv://test:test@mongocluster.yervs.mongodb.net/Mon
 db = client.get_database('MongoDB')
 records = db.MongoRecords
 
-# aa = records.count_documents({})
+aa = records.count_documents({})
 
-# print(aa)
+print(aa)
 
 
 #---------------insert single record---------------------
 # new_student = {
-#     'name': 'ram',
-#     'roll_no': 321,
-#     'branch': 'it'
+#         'Product_name': 'cell',
+#         'product_id': 01,
 # }
 # records.insert_one(new_student)
 
 #---------------insert multiple records---------------------
-# new_students = [
+# new_record = [
 #     {
-#         'name': 'alex',
-#         'roll_no': 320,
-#         'branch': 'it'
+#         'Product_name': 'cell',
+#         'product_id': 01,
+#  
 #     },
 #     {
-#         'name': 'john',
-#         'roll_no': 30,
-#         'branch': 'ece'
+#         'Product_name': 'cell phone',
+#         'product_id': 02,
 #     }
 # ]
-
 # records.insert_many(new_students)
+
+
+
 
 #------------------Find all Records---------------------
 # print(list(records.find()))
 
+
+
+
 #-----------------find Specific record------------------------------
-# print(records.find_one({'roll_no': '123'}))
+# print(records.find_one({'Reciept_id': '01'}))
+
+
+
 
 
 #-----------------------Update Records-----------------
-# student_updates = {
-#     'name': 'khalil ul Rehman Mirza'
+# record_updates = {
+#     'Reciept_id': 001
 # }
-# records.update_one({'roll_no': '123'}, {'$set': student_updates})
+# records.update_one({'Reciept_id':01}, {'$set': record_updates})
+
+
 
 #-----------------Delete Records-------------
-import time
-start_time = time.time()
-for i in range(12,30):
-    records.delete_one({"Reciept_id":i})
-print("--- %s seconds ---" % (time.time() - start_time))
+# import time
+# start_time = time.time()
+# for i in range(101,103):
+#     aa = records.delete_one({"Reciept_id":i})
+#     print(aa)
+# print("--- %s seconds ---" % (time.time() - start_time))
 
-# import pandas as pd
+
+
+
+
+# # import pandas as pd
 # df = pd.read_csv('/Users/mirza/Desktop/bot/data_grocessary/finaldataset.csv')
-
-
-
 # for i in range(0,1000):
 #     a=df['Products'][i]
 #     b=df['Reciept_ID'][i]
@@ -89,12 +99,6 @@ print("--- %s seconds ---" % (time.time() - start_time))
 
 
 
-# # Index(['Unnamed: 0', 'Products', 'Reciept_ID', 'Serial No.', 'Quantity',
-# #        'Sales Price', 'Unit Price', 'Cost_Price', 'Date and Time'],
-# #       dtype='object')
-
-
-
-
-
+# Index(['Unnamed: 0', 'Products', 'Reciept_ID', 'Serial No.', 'Quantity',
+#     'Sales Price', 'Unit Price', 'Cost_Price', 'Date and Time'], dtype='object')
 
